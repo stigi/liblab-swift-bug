@@ -2858,19 +2858,6 @@
           "links": {
             "$ref": "#/components/schemas/Links"
           }
-        },
-        "example": {
-          "data": [
-            {
-              "discarded_at": "2021-01-01T00:00:00Z",
-              "id": "123"
-            }
-          ],
-          "links": {
-            "first": "https://api.magicbell.com/v1/example",
-            "next": "https://api.magicbell.com/v1/example?page[next]=abc",
-            "prev": null
-          }
         }
       },
       "ArrayOfExpoConfigObjects": {
@@ -4050,10 +4037,6 @@
             "type": "string",
             "format": "uuid"
           }
-        },
-        "example": {
-          "discarded_at": "2021-01-01T00:00:00Z",
-          "token_id": "12345"
         }
       },
       "Event": {
