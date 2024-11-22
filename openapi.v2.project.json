@@ -25,6 +25,12 @@
     },
     {
       "name": "broadcasts"
+    },
+    {
+      "name": "events"
+    },
+    {
+      "name": "jwt"
     }
   ],
   "paths": {
@@ -139,7 +145,7 @@
         "tags": [
           "channels"
         ],
-        "description": "",
+        "description": "Dummy",
         "operationId": "get_project_deliveryconfig",
         "responses": {
           "200": {
@@ -158,7 +164,7 @@
         "tags": [
           "channels"
         ],
-        "description": "",
+        "description": "Dummy",
         "operationId": "save_project_deliveryconfig",
         "requestBody": {
           "content": {
@@ -188,7 +194,7 @@
         "tags": [
           "channels"
         ],
-        "description": "",
+        "description": "Dummy",
         "operationId": "save_categories_deliveryconfig",
         "requestBody": {
           "content": {
@@ -215,7 +221,9 @@
     },
     "/events": {
       "get": {
-        "tags": [],
+        "tags": [
+          "events"
+        ],
         "description": "Retrieves a paginated list of events for the project.",
         "operationId": "get_events",
         "parameters": [
@@ -1595,7 +1603,9 @@
     },
     "/jwt/project": {
       "get": {
-        "tags": [],
+        "tags": [
+          "jwt"
+        ],
         "description": "Retrieves a list of all active project-level JWT tokens. Returns a paginated list showing token metadata including creation date, last used date, and expiration time. For security reasons, the actual token values are not included in the response.",
         "operationId": "fetch_project_tokens",
         "parameters": [
@@ -1638,7 +1648,9 @@
         }
       },
       "post": {
-        "tags": [],
+        "tags": [
+          "jwt"
+        ],
         "description": "Creates a new project-level JWT token. These tokens provide project-wide access and should be carefully managed. Only administrators can create project tokens. The returned token should be securely stored as it cannot be retrieved again after creation.",
         "operationId": "create_project_jwt",
         "requestBody": {
@@ -1666,7 +1678,9 @@
     },
     "/jwt/project/{token_id}": {
       "delete": {
-        "tags": [],
+        "tags": [
+          "jwt"
+        ],
         "description": "Immediately revokes a project-level JWT token. Once revoked, any requests using this token will be rejected. This action is immediate and cannot be undone. Active sessions using this token will be terminated.",
         "operationId": "discard_project_jwt",
         "parameters": [
@@ -1695,7 +1709,9 @@
     },
     "/jwt/user": {
       "post": {
-        "tags": [],
+        "tags": [
+          "jwt"
+        ],
         "description": "Issues a new user-specific JWT token. These tokens are scoped to individual user permissions and access levels. Only administrators can create user tokens. The token is returned only once at creation time and cannot be retrieved later.",
         "operationId": "create_user_jwt",
         "requestBody": {
@@ -1723,7 +1739,9 @@
     },
     "/jwt/user/{user_id}": {
       "get": {
-        "tags": [],
+        "tags": [
+          "jwt"
+        ],
         "description": "Lists all JWT tokens associated with a specific user. Returns token metadata including creation time, last access time, and expiration date. Administrators can use this to audit user token usage and manage active sessions. Token values are not included in the response for security reasons.",
         "operationId": "fetch_user_tokens",
         "parameters": [
