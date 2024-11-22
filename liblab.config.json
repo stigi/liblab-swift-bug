@@ -2,7 +2,7 @@
   "sdkName": "magicbell-client",
   "apiVersion": "1.0.0",
   "apiName": "magicbell-api",
-  "specFilePath": "https://public.magicbell.com/specs/openapi.v2.project.json",
+  "specFilePath": "openapi.v2.project.json",
   "languages": ["swift"],
   "auth": ["bearer"],
   "customizations": {
