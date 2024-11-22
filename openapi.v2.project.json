@@ -1721,35 +1721,6 @@
         }
       }
     },
-    "/jwt/user/{token_id}": {
-      "delete": {
-        "tags": [],
-        "description": "Revokes a specific user's JWT token. This immediately invalidates the token and terminates any active sessions using it. This action cannot be undone. Administrators should use this to revoke access when needed for security purposes.",
-        "operationId": "discard_user_jwt",
-        "parameters": [
-          {
-            "name": "token_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DiscardTokenResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/jwt/user/{user_id}": {
       "get": {
         "tags": [],
